@@ -1,2 +1,3 @@
-# Meals-Info-Android
+[![official JetBrains project](https://jb.gg/badges/official.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 
+# Meals-Info-Android
