@@ -11,7 +11,7 @@ import kotlin.coroutines.CoroutineContext
 
 open class BaseViewModel : ViewModel() {
     private val jobs = Job()
-    private val coroutineContext: CoroutineContext
+    val coroutineContext: CoroutineContext
         get() = jobs + Dispatchers.IO
     val scope = CoroutineScope(coroutineContext)
     var isLoad = ObservableField(true)

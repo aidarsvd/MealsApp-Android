@@ -16,13 +16,18 @@
         android:theme="@style/Theme.MealsApp"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".ui.main.MainActivity"
-            android:screenOrientation="fullSensor">
+            android:name=".ui.random.RandomActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:screenOrientation="fullSensor">
+
         </activity>
     </application>
 

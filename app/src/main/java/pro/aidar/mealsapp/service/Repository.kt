@@ -2,11 +2,16 @@ package pro.aidar.mealsapp.service
 
 import javax.inject.Inject
 import javax.inject.Singleton
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 import pro.aidar.mealsapp.db.FavoritesDao
 import pro.aidar.mealsapp.model.category.CategoryList
 import pro.aidar.mealsapp.model.meal.Meal
 import pro.aidar.mealsapp.model.meal.MealList
 import pro.aidar.mealsapp.model.meal.MealListDetail
+import retrofit2.Response
 
 @Singleton
 class Repository @Inject constructor(
@@ -39,5 +44,9 @@ class Repository @Inject constructor(
 
     fun isMealExists(name: String): Boolean {
         return favoritesDao.isRowIsExist(name = name)
+    }
+
+    suspend fun getRandom(): MealListDetail {
+        return apiService.getRandom()
     }
 }

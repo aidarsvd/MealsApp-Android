@@ -8,8 +8,10 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.Fragment
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.transform
 import pro.aidar.mealsapp.App
-import pro.aidar.mealsapp.R
 
 fun View.setThrottleOnClickListener(callback: (view: View) -> Unit) {
     var lastClickTime = 0L
@@ -61,4 +63,11 @@ inline fun Fragment.displayPopUp(
         }
     }
     popup.show()
+}
+
+fun <T> Flow<T>.repeated(condition: Boolean): Flow<T> {
+    return transform { value ->
+        while (condition)
+            return@transform emit(value)
+    }
 }
