@@ -22,7 +22,8 @@ object MealsDataBaseModule {
             context,
             MealDataBase::class.java,
             "database"
-        ).build()
+        ).allowMainThreadQueries()
+            .build()
     }
 
 }

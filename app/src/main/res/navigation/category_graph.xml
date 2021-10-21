@@ -2,35 +2,35 @@
 <navigation
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/category_graph">
-<!--    app:startDestination="@id/categoriesFragment">-->
+    android:id="@+id/category_graph"
+    app:startDestination="@id/categoriesFragment">
 
-<!--    <fragment-->
-<!--        android:id="@+id/categoriesFragment"-->
-<!--        android:name="pro.aidar.mealsapp.ui.main.fragment.categories.CategoriesFragment"-->
-<!--        android:label="CategoriesFragment">-->
-<!--        <action-->
-<!--            android:id="@+id/action_categoriesFragment_to_mealListFragment"-->
-<!--            app:destination="@id/mealListFragment"-->
-<!--            app:enterAnim="@anim/enter_right_to_left"-->
-<!--            app:exitAnim="@anim/exit_left_to_right"-->
-<!--            app:popEnterAnim="@anim/enter_left_to_right"-->
-<!--            app:popExitAnim="@anim/exit_right_to_left" />-->
-<!--    </fragment>-->
-<!--    <fragment-->
-<!--        android:id="@+id/mealListFragment"-->
-<!--        android:name="pro.aidar.mealsapp.ui.main.fragment.meal_list.MealListFragment"-->
-<!--        android:label="MealListFragment">-->
-<!--        <action-->
-<!--            android:id="@+id/action_mealListFragment_to_mealDetailFragment"-->
-<!--            app:destination="@id/mealDetailFragment2"-->
-<!--            app:enterAnim="@anim/enter_right_to_left"-->
-<!--            app:exitAnim="@anim/exit_left_to_right"-->
-<!--            app:popEnterAnim="@anim/enter_left_to_right"-->
-<!--            app:popExitAnim="@anim/exit_right_to_left" />-->
-<!--    </fragment>-->
-<!--    <fragment-->
-<!--        android:id="@+id/mealDetailFragment2"-->
-<!--        android:name="pro.aidar.mealsapp.ui.main.fragment.meal_detail.MealDetailFragment"-->
-<!--        android:label="MealDetailFragment" />-->
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="pro.aidar.mealsapp.ui.main.fragment.categories.CategoriesFragment"
+        android:label="CategoriesFragment">
+        <action
+            android:id="@+id/action_categoriesFragment_to_mealListFragment"
+            app:destination="@id/mealListFragment"
+            app:enterAnim="@anim/enter_right_to_left"
+            app:exitAnim="@anim/exit_left_to_right"
+            app:popEnterAnim="@anim/enter_left_to_right"
+            app:popExitAnim="@anim/exit_right_to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/mealListFragment"
+        android:name="pro.aidar.mealsapp.ui.main.fragment.meal_list.MealListFragment"
+        android:label="MealListFragment">
+        <action
+            android:id="@+id/action_mealListFragment_to_mealDetailFragment"
+            app:destination="@id/mealDetailFragment"
+            app:enterAnim="@anim/enter_right_to_left"
+            app:exitAnim="@anim/exit_left_to_right"
+            app:popEnterAnim="@anim/enter_left_to_right"
+            app:popExitAnim="@anim/exit_right_to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/mealDetailFragment"
+        android:name="pro.aidar.mealsapp.ui.main.fragment.meal_detail.MealDetailFragment"
+        android:label="MealDetailFragment" />
 </navigation>
