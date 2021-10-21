@@ -1,2 +1,3 @@
 rootProject.name = "MealsApp"
 include ':app'
+include ':data'

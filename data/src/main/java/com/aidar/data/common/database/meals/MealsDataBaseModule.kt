@@ -1,4 +1,4 @@
-package pro.aidar.mealsapp.di
+package com.aidar.data.common.database.meals
 
 import android.content.Context
 import androidx.room.Room
@@ -8,16 +8,14 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
-import pro.aidar.mealsapp.db.FavoritesDao
-import pro.aidar.mealsapp.db.MealDataBase
 
 @InstallIn(SingletonComponent::class)
 @Module
-object RoomModule {
+object MealsDataBaseModule {
 
     @Provides
     @Singleton
-    fun provideCharacterDatabase(
+    fun provideMealsDatabase(
         @ApplicationContext context: Context
     ): MealDataBase {
         return Room.databaseBuilder(
@@ -27,8 +25,4 @@ object RoomModule {
         ).build()
     }
 
-    @Provides
-    fun provideNoteDao(db: MealDataBase): FavoritesDao {
-        return db.mealDao()
-    }
 }

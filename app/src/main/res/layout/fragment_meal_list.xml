@@ -5,9 +5,9 @@
 
     <data>
 
-        <variable
-            name="viewModel"
-            type="pro.aidar.mealsapp.ui.main.viewModel.MainViewModel" />
+<!--        <variable-->
+<!--            name="viewModel"-->
+<!--            type="pro.aidar.mealsapp.ui.main.viewModel.MainViewModel" />-->
 
         <import type="android.view.View" />
     </data>
@@ -43,14 +43,14 @@
 
         </LinearLayout>
 
-        <ProgressBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="@{viewModel.isLoad()? View.VISIBLE : View.GONE}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+<!--        <ProgressBar-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:visibility="@{viewModel.isLoad()? View.VISIBLE : View.GONE}"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

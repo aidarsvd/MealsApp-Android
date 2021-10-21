@@ -16,7 +16,7 @@
         android:theme="@style/Theme.MealsApp"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".ui.main.MainActivity"
+            android:name=".ui.main.StubActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
