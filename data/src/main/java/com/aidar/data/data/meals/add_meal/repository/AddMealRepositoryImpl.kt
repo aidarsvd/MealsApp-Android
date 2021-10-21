@@ -9,7 +9,7 @@ class AddMealRepositoryImpl @Inject constructor(
     private val addMealDao: AddMealDao
 ) : AddMealRepository {
 
-    override fun addMeal(meal: Meal) {
-
+    override suspend fun addMeal(meal: Meal) {
+        addMealDao.addMeal(meal = meal)
     }
 }
