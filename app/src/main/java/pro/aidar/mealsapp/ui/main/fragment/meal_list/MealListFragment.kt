@@ -28,12 +28,14 @@ class MealListFragment : BaseFragment<FragmentMealListBinding>(R.layout.fragment
     private var meals = ArrayList<Meal>()
     override fun setUpView() {
         binding.viewModel = viewModel
-        initMealId()
-        getMealDetail()
         initAdapter()
         setUpObservers()
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        initMealId()
+    }
     private fun getMealDetail() {
         viewModel.fetchCategory(id = mealId)
     }
@@ -41,6 +43,7 @@ class MealListFragment : BaseFragment<FragmentMealListBinding>(R.layout.fragment
     private fun initMealId() {
         arguments.let {
             mealId = it!!.getString(CATEGORY_ID)!!
+            getMealDetail()
         }
     }
 
@@ -57,15 +60,6 @@ class MealListFragment : BaseFragment<FragmentMealListBinding>(R.layout.fragment
                 meals.clear()
                 response.meals?.let { it -> meals.addAll(it) }
                 adapter.notifyDataSetChanged()
-            }
-        }
-
-        lifecycleScope.launch {
-            viewModel.likeStatus.observe(viewLifecycleOwner) {
-                when (it) {
-                    LikeStatus.EXIST -> showToast(getString(R.string.already_added))
-                    LikeStatus.ERROR -> showToast(getString(R.string.error))
-                }
             }
         }
     }

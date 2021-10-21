@@ -1,5 +1,6 @@
 package pro.aidar.mealsapp.ui.main.fragment.categories
 
+import android.os.Bundle
 import androidx.core.os.bundleOf
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
@@ -21,9 +22,13 @@ class CategoriesFragment : BaseFragment<FragmentCategoriesBinding>(R.layout.frag
     private var categories: ArrayList<Category> = ArrayList()
     override fun setUpView() {
         binding.viewModel = viewModel
-        getCategories()
         setAdapter()
         setObservers()
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        getCategories()
     }
 
     private fun getCategories() {

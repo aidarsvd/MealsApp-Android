@@ -32,7 +32,7 @@ class MainViewModel @Inject constructor(
 
 ) : BaseViewModel() {
 
-    val likeStatus = MutableLiveData(LikeStatus.ERROR)
+    val likeStatus = MutableLiveData(LikeStatus.LIKED)
 
     val categories: MutableLiveData<CategoryList> by lazy {
         MutableLiveData(CategoryList())
