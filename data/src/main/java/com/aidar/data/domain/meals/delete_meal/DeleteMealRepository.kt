@@ -1,4 +1,4 @@
-package com.aidar.data.domain.delete_meal
+package com.aidar.data.domain.meals.delete_meal
 
 import com.aidar.data.base.model.Meal
 

@@ -1,7 +1,7 @@
-package com.aidar.data.domain.delete_meal.usecase
+package com.aidar.data.domain.meals.delete_meal.usecase
 
 import com.aidar.data.base.model.Meal
-import com.aidar.data.domain.delete_meal.DeleteMealRepository
+import com.aidar.data.domain.meals.delete_meal.DeleteMealRepository
 import javax.inject.Inject
 
 class DeleteMealUseCase @Inject constructor(private val repository: DeleteMealRepository) {

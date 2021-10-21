@@ -3,7 +3,7 @@ package com.aidar.data.data.meals.get_favorites
 import com.aidar.data.common.database.meals.MealDataBase
 import com.aidar.data.data.meals.get_favorites.dao.GetFavoritesDao
 import com.aidar.data.data.meals.get_favorites.repository.GetFavoriteRepositoryImpl
-import com.aidar.data.domain.get_favorites.GetFavoriteRepository
+import com.aidar.data.domain.meals.get_favorites.GetFavoriteRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

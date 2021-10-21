@@ -1,4 +1,4 @@
-package com.aidar.data.domain.add_meal
+package com.aidar.data.domain.meals.add_meal
 
 import com.aidar.data.base.model.Meal
 

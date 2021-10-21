@@ -1,6 +1,6 @@
-package com.aidar.data.domain.validate_meal.usecase
+package com.aidar.data.domain.meals.validate_meal.usecase
 
-import com.aidar.data.domain.validate_meal.ValidateMealRepository
+import com.aidar.data.domain.meals.validate_meal.ValidateMealRepository
 import javax.inject.Inject
 
 class ValidateMealUseCase @Inject constructor(private val repository: ValidateMealRepository) {

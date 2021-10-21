@@ -3,7 +3,7 @@ package com.aidar.data.data.meals.add_meal
 import com.aidar.data.common.database.meals.MealDataBase
 import com.aidar.data.data.meals.add_meal.dao.AddMealDao
 import com.aidar.data.data.meals.add_meal.repository.AddMealRepositoryImpl
-import com.aidar.data.domain.add_meal.AddMealRepository
+import com.aidar.data.domain.meals.add_meal.AddMealRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

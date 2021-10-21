@@ -1,4 +1,4 @@
-package com.aidar.data.domain.get_favorites
+package com.aidar.data.domain.meals.get_favorites
 
 import com.aidar.data.base.model.Meal
 

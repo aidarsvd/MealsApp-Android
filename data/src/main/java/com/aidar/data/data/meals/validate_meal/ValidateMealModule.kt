@@ -3,7 +3,7 @@ package com.aidar.data.data.meals.validate_meal
 import com.aidar.data.common.database.meals.MealDataBase
 import com.aidar.data.data.meals.validate_meal.dao.ValidateMealDao
 import com.aidar.data.data.meals.validate_meal.repository.ValidateMealRepositoryImpl
-import com.aidar.data.domain.validate_meal.ValidateMealRepository
+import com.aidar.data.domain.meals.validate_meal.ValidateMealRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
