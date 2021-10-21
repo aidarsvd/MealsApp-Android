@@ -5,11 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import java.util.ArrayList
+import com.aidar.data.base.model.Meal
 import pro.aidar.mealsapp.R
 import pro.aidar.mealsapp.databinding.ItemMealBinding
-import pro.aidar.mealsapp.model.meal.Meal
 import pro.aidar.mealsapp.utils.setThrottleOnClickListener
+import java.util.*
 
 class MealsAdapter(private var list: ArrayList<Meal>, private val listener: MealListener) :
     RecyclerView.Adapter<MealsAdapter.MealsViewHolder>() {

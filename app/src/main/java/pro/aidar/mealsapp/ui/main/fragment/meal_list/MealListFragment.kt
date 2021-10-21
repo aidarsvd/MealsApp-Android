@@ -13,7 +13,7 @@
 //import pro.aidar.mealsapp.base.BaseFragment
 //import pro.aidar.mealsapp.databinding.FragmentMealListBinding
 //import pro.aidar.mealsapp.model.meal.Meal
-//import pro.aidar.mealsapp.model.status.LikeStatus
+//import pro.aidar.mealsapp.utils.status.LikeStatus
 //import pro.aidar.mealsapp.ui.main.adapter.MealsAdapter
 //import pro.aidar.mealsapp.ui.main.viewModel.MainViewModel
 //import pro.aidar.mealsapp.utils.AppConstant.CATEGORY_ID

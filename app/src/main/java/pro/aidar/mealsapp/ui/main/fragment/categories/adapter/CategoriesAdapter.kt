@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import java.util.ArrayList
+import com.aidar.data.data.meals.get_meal_categories.dto.Category
 import pro.aidar.mealsapp.R
 import pro.aidar.mealsapp.databinding.ItemCategoryBinding
-import pro.aidar.mealsapp.model.category.Category
+import java.util.*
 
 class CategoriesAdapter(private val list: ArrayList<Category>, private val listener: CategoriesListener) :
     RecyclerView.Adapter<CategoriesAdapter.CategoriesViewHolder>() {

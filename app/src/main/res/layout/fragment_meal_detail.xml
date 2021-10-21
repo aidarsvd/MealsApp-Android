@@ -10,7 +10,7 @@
 
         <variable
             name="model"
-            type="pro.aidar.mealsapp.model.meal.MealDetail" />
+            type="com.aidar.data.data.meals.get_meal_detail.dto.MealDetail" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

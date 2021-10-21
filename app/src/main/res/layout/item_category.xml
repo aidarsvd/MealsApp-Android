@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="pro.aidar.mealsapp.model.category.Category" />
+            type="com.aidar.data.data.meals.get_meal_categories.dto.Category" />
     </data>
 
     <LinearLayout

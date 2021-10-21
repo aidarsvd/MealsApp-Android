@@ -13,7 +13,7 @@
 //import pro.aidar.mealsapp.model.meal.Meal
 //import pro.aidar.mealsapp.model.meal.MealList
 //import pro.aidar.mealsapp.model.meal.MealListDetail
-//import pro.aidar.mealsapp.model.status.LikeStatus
+//import pro.aidar.mealsapp.utils.status.LikeStatus
 //import pro.aidar.mealsapp.service.Repository
 //
 //@HiltViewModel

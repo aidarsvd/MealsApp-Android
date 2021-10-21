@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="pro.aidar.mealsapp.model.meal.Meal" />
+            type="com.aidar.data.base.model.Meal" />
     </data>
 
     <LinearLayout
@@ -60,10 +60,10 @@
 
                 <ImageView
                     android:id="@+id/like"
-                    android:padding="@dimen/_8sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
+                    android:padding="@dimen/_8sdp"
                     android:src="@drawable/ic_baseline_more_horiz_24" />
             </RelativeLayout>
 
