@@ -9,6 +9,7 @@ import pro.aidar.mealsapp.base.BaseActivity
 import pro.aidar.mealsapp.databinding.ActivityMainBinding
 import pro.aidar.mealsapp.utils.setupWithNavController
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     private var currentNavController: LiveData<NavController>? = null
