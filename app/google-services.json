@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1056559613290",
+    "project_id": "mealsapppet",
+    "storage_bucket": "mealsapppet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056559613290:android:394f5e3260d99befbed113",
+        "android_client_info": {
+          "package_name": "pro.aidar.mealsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1056559613290-ndsr41cip1u358mfh33staj9smqu8kke.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIk80tmES_EC4Cjp-LqW0QtXuzj55_NjY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1056559613290-ndsr41cip1u358mfh33staj9smqu8kke.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
