@@ -1,7 +1,6 @@
 package pro.aidar.mealsapp.ui.main.viewModel
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
 import com.aidar.data.base.model.Meal
 import com.aidar.data.data.meals.get_meal_categories.dto.CategoryList
 import com.aidar.data.data.meals.get_meal_category.dto.MealList
@@ -14,8 +13,6 @@ import com.aidar.data.domain.meals.get_meal_categories.usecase.MealCategoriesUse
 import com.aidar.data.domain.meals.get_meal_detail.usecase.MealDetailUseCase
 import com.aidar.data.domain.meals.validate_meal.usecase.ValidateMealUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import pro.aidar.mealsapp.base.BaseViewModel
 import pro.aidar.mealsapp.utils.status.LikeStatus
 import javax.inject.Inject
@@ -52,61 +49,80 @@ class MainViewModel @Inject constructor(
 
     fun fetchCategories() {
         isLoad.set(true)
-        viewModelScope.launch {
-            withContext(coroutineContext) {
-                categories.postValue(categoriesUseCase.execute())
-                isLoad.set(false)
-            }
-        }
+        disposable.add(
+            categoriesUseCase.execute()
+                .subscribe({
+                    categories.postValue(it)
+                    isLoad.set(false)
+                }, {
+                    it.stackTrace
+                    isLoad.set(false)
+                })
+        )
     }
 
     fun fetchCategory(id: String) {
-        viewModelScope.launch {
-            withContext(coroutineContext) {
-                category.postValue(categoryUseCase.execute(name = id))
-            }
-        }
+        isLoad.set(true)
+        disposable.add(
+            categoryUseCase.execute(name = id)
+                .subscribe({
+                    category.postValue(it)
+                    isLoad.set(false)
+                }, {
+                    it.stackTrace
+                    isLoad.set(false)
+                })
+        )
     }
 
     fun fetchFavorite() {
-        viewModelScope.launch {
-            withContext(coroutineContext) {
-                favorites.postValue(favoriteMealsUseCase.getFavorites())
-            }
-        }
+        disposable.add(
+            favoriteMealsUseCase.getFavorites()
+                .subscribe({
+                    favorites.postValue(it)
+                }, {
+                    it.stackTrace
+                    isLoad.set(false)
+                })
+        )
     }
 
     fun fetchDetailMeal(id: String) {
-        viewModelScope.launch {
-            withContext(coroutineContext) {
-                mealDetail.postValue(mealDetailUseCase.execute(id = id))
-            }
-        }
+        disposable.add(
+            mealDetailUseCase.execute(id = id)
+                .subscribe({
+                    mealDetail.postValue(it)
+                }, {
+                    it.stackTrace
+                    isLoad.set(false)
+                })
+        )
     }
 
-    fun validateMeal(name: Meal) {
-        viewModelScope.launch {
-            try {
-                val isExist = validateMealUseCase.execute(id = name.idMeal!!)
-                if (!isExist) {
-                    addMealUseCase.execute(meal = name)
-                    likeStatus.value = LikeStatus.LIKED
-                } else {
-                    likeStatus.value = LikeStatus.EXIST
-                    return@launch
-                }
-            } catch (e: Exception) {
-                e.stackTrace
-                likeStatus.value = LikeStatus.ERROR
-                return@launch
-            }
-        }
+    fun validateMeal(meal: Meal) {
+        disposable.add(
+            validateMealUseCase.execute(meal.idMeal!!)
+                .subscribe({
+                    if (it) likeStatus.postValue(LikeStatus.EXIST)
+                    else {
+                        addMealUseCase.execute(meal).subscribe({
+                            likeStatus.postValue(LikeStatus.LIKED)
+                        },{
+                            likeStatus.postValue(LikeStatus.ERROR)
+                        })
+                    }
+                }, {
+                    likeStatus.postValue(LikeStatus.ERROR)
+                    it.stackTrace
+                    isLoad.set(false)
+                })
+        )
     }
 
     fun deleteMealFromFavorite(meal: Meal) {
-        viewModelScope.launch {
-            deleteMealUseCase.execute(meal = meal)
-        }
+        disposable.add(
+            deleteMealUseCase.execute(meal).subscribe()
+        )
     }
 
 }

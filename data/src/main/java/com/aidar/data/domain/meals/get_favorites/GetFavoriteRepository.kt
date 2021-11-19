@@ -1,7 +1,8 @@
 package com.aidar.data.domain.meals.get_favorites
 
 import com.aidar.data.base.model.Meal
+import io.reactivex.rxjava3.core.Observable
 
 interface GetFavoriteRepository {
-    suspend fun getFavorite(): List<Meal>
+    fun getFavorite(): Observable<List<Meal>>
 }

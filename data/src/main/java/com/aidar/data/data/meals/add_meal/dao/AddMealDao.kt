@@ -8,5 +8,5 @@ import com.aidar.data.base.model.Meal
 @Dao
 interface AddMealDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun addMeal(meal: Meal)
+    fun addMeal(meal: Meal)
 }

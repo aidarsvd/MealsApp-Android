@@ -73,7 +73,7 @@ class MealListFragment : BaseFragment<FragmentMealListBinding>(R.layout.fragment
 
     override fun onOptionsMenuClick(model: Meal, view: View, position: Int) {
         displayPopUp(view = view, menu = R.menu.meal_menu, itemId = R.id.like_meal) {
-            viewModel.validateMeal(name = model)
+            viewModel.validateMeal(model)
         }
     }
 }

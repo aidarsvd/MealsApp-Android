@@ -83,7 +83,7 @@ class MealDetailFragment : BaseFragment<FragmentMealDetailBinding>(R.layout.frag
                 menu = R.menu.meal_menu,
                 itemId = R.id.like_meal
             ) {
-                viewModel.validateMeal(name = meal)
+                viewModel.validateMeal(meal)
             }
     }
 }

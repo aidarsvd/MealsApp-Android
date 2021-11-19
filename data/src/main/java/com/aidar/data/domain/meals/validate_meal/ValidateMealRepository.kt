@@ -1,5 +1,7 @@
 package com.aidar.data.domain.meals.validate_meal
 
+import io.reactivex.rxjava3.core.Single
+
 interface ValidateMealRepository {
-    suspend fun validateMeal(id: String): Boolean
+    fun validateMeal(id: String): Single<Boolean>
 }

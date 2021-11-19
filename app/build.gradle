@@ -78,6 +78,9 @@ dependencies {
     implementation 'androidx.room:room-ktx:2.3.0'
     kapt "androidx.room:room-compiler:2.3.0"
 
+    //Rx Java
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.4'
 
     //    Navigation
     def nav_version = "2.3.3"
