@@ -10,4 +10,9 @@ open class BaseViewModel : ViewModel() {
     val disposable: CompositeDisposable by lazy {
         return@lazy CompositeDisposable()
     }
+
+    fun handleError(it: Throwable){
+        it.stackTrace
+        isLoad.set(false)
+    }
 }

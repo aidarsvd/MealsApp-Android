@@ -54,10 +54,7 @@ class MainViewModel @Inject constructor(
                 .subscribe({
                     categories.postValue(it)
                     isLoad.set(false)
-                }, {
-                    it.stackTrace
-                    isLoad.set(false)
-                })
+                }, ::handleError)
         )
     }
 
@@ -68,10 +65,7 @@ class MainViewModel @Inject constructor(
                 .subscribe({
                     category.postValue(it)
                     isLoad.set(false)
-                }, {
-                    it.stackTrace
-                    isLoad.set(false)
-                })
+                }, ::handleError)
         )
     }
 
@@ -80,10 +74,7 @@ class MainViewModel @Inject constructor(
             favoriteMealsUseCase.getFavorites()
                 .subscribe({
                     favorites.postValue(it)
-                }, {
-                    it.stackTrace
-                    isLoad.set(false)
-                })
+                }, ::handleError)
         )
     }
 
@@ -92,10 +83,7 @@ class MainViewModel @Inject constructor(
             mealDetailUseCase.execute(id = id)
                 .subscribe({
                     mealDetail.postValue(it)
-                }, {
-                    it.stackTrace
-                    isLoad.set(false)
-                })
+                }, ::handleError)
         )
     }
 
@@ -111,11 +99,7 @@ class MainViewModel @Inject constructor(
                             likeStatus.postValue(LikeStatus.ERROR)
                         })
                     }
-                }, {
-                    likeStatus.postValue(LikeStatus.ERROR)
-                    it.stackTrace
-                    isLoad.set(false)
-                })
+                }, ::handleError)
         )
     }
 

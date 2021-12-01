@@ -1,6 +1,8 @@
 package pro.aidar.mealsapp.ui.main.fragment.meal_detail
 
+import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.navArgs
 import com.aidar.data.base.model.Meal
 import pro.aidar.mealsapp.R
 import pro.aidar.mealsapp.base.BaseFragment
@@ -21,6 +23,8 @@ class MealDetailFragment : BaseFragment<FragmentMealDetailBinding>(R.layout.frag
     private var videoUrl: String? = null
     private val viewModel: MainViewModel by activityViewModels()
     var meal = Meal()
+    private val args: MealDetailFragmentArgs by navArgs()
+
 
     override fun setUpView() {
         initMealId()
@@ -30,9 +34,12 @@ class MealDetailFragment : BaseFragment<FragmentMealDetailBinding>(R.layout.frag
     }
 
     private fun initMealId() {
+        args.id?.let { mealId = it }
         arguments?.let {
-            mealId = it.getString(MEAL_ID)!!
-            viewMode = it.getString(DETAIL_VIEW_MODE)!!
+            it.getString(MEAL_ID)?.let { mealId = it }
+            it.getString(DETAIL_VIEW_MODE)?.let { viewMode = it } ?: run {
+                binding.more.isVisible = false
+            }
         }
     }
 
