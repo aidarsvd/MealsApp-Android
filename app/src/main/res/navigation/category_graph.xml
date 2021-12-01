@@ -11,11 +11,7 @@
         android:label="CategoriesFragment">
         <action
             android:id="@+id/action_categoriesFragment_to_mealListFragment"
-            app:destination="@id/mealListFragment"
-            app:enterAnim="@anim/enter_right_to_left"
-            app:exitAnim="@anim/exit_left_to_right"
-            app:popEnterAnim="@anim/enter_left_to_right"
-            app:popExitAnim="@anim/exit_right_to_left" />
+            app:destination="@id/mealListFragment" />
     </fragment>
     <fragment
         android:id="@+id/mealListFragment"
@@ -23,11 +19,7 @@
         android:label="MealListFragment">
         <action
             android:id="@+id/action_mealListFragment_to_mealDetailFragment"
-            app:destination="@id/mealDetailFragment"
-            app:enterAnim="@anim/enter_right_to_left"
-            app:exitAnim="@anim/exit_left_to_right"
-            app:popEnterAnim="@anim/enter_left_to_right"
-            app:popExitAnim="@anim/exit_right_to_left" />
+            app:destination="@id/mealDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/mealDetailFragment"

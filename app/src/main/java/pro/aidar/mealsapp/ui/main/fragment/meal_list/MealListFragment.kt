@@ -58,7 +58,7 @@ class MealListFragment : BaseFragment<FragmentMealListBinding>(R.layout.fragment
         lifecycleScope.launch {
             viewModel.category.observe(viewLifecycleOwner) { response ->
                 meals.clear()
-                response.meals?.let { it -> meals.addAll(it) }
+                response?.meals?.let { it -> meals.addAll(it) }
                 adapter.notifyDataSetChanged()
             }
         }

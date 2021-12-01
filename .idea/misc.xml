@@ -6,12 +6,13 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_random.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_stub.xml" value="0.3037037037037037" />
-        <entry key="app/src/main/res/layout/fragment_categories.xml" value="0.3037037037037037" />
+        <entry key="app/src/main/res/layout/fragment_categories.xml" value="0.23802393774776032" />
         <entry key="app/src/main/res/layout/fragment_favorite.xml" value="0.3037037037037037" />
         <entry key="app/src/main/res/layout/fragment_meal_detail.xml" value="0.3037037037037037" />
         <entry key="app/src/main/res/layout/fragment_meal_list.xml" value="0.3037037037037037" />
         <entry key="app/src/main/res/layout/item_category.xml" value="0.3037037037037037" />
         <entry key="app/src/main/res/layout/item_meal.xml" value="0.3037037037037037" />
+        <entry key="app/src/main/res/layout/placeholder_category.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />
         <entry key="app/src/main/res/menu/meal_favorite_menu.xml" value="0.3037037037037037" />
         <entry key="app/src/main/res/menu/meal_menu.xml" value="0.3037037037037037" />

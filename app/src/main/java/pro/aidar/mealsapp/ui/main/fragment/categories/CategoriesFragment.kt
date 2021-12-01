@@ -39,7 +39,7 @@ class CategoriesFragment : BaseFragment<FragmentCategoriesBinding>(R.layout.frag
         lifecycleScope.launch {
             viewModel.categories.observe(viewLifecycleOwner) { response ->
                 categories.clear()
-                response.categories?.let { it -> categories.addAll(it) }
+                response?.categories?.let { it -> categories.addAll(it) }
                 adapter.notifyDataSetChanged()
             }
         }

@@ -49,7 +49,7 @@ class MealDetailFragment : BaseFragment<FragmentMealDetailBinding>(R.layout.frag
 
     private fun initObserver() {
         viewModel.mealDetail.observe(this) {
-            it.meals?.let { detail ->
+            it?.meals?.let { detail ->
                 with(detail[0]) {
                     binding.model = this
                     videoUrl = strYoutube

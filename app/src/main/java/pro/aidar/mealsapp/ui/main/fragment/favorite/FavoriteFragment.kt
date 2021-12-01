@@ -39,7 +39,7 @@ class FavoriteFragment : BaseFragment<FragmentFavoriteBinding>(
         lifecycleScope.launchWhenCreated {
             viewModel.favorites.observe(viewLifecycleOwner) { data ->
                 meals.clear()
-                data.map { meals.add(it) }
+                data?.forEach { meals.add(it) }
                 adapter.notifyDataSetChanged()
             }
         }

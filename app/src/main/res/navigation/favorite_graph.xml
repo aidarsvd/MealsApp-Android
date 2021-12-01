@@ -11,10 +11,6 @@
         android:name="pro.aidar.mealsapp.ui.main.fragment.favorite.FavoriteFragment"
         android:label="FavoriteFragment" >
         <action
-            app:enterAnim="@anim/enter_right_to_left"
-            app:exitAnim="@anim/exit_left_to_right"
-            app:popEnterAnim="@anim/enter_left_to_right"
-            app:popExitAnim="@anim/exit_right_to_left"
             android:id="@+id/action_favoriteFragment_to_mealDetailFragment"
             app:destination="@id/mealDetailFragment" />
     </fragment>

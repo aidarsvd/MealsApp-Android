@@ -13,9 +13,10 @@ import com.aidar.data.domain.meals.get_meal_categories.usecase.MealCategoriesUse
 import com.aidar.data.domain.meals.get_meal_detail.usecase.MealDetailUseCase
 import com.aidar.data.domain.meals.validate_meal.usecase.ValidateMealUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import pro.aidar.mealsapp.base.BaseViewModel
-import pro.aidar.mealsapp.utils.status.LikeStatus
 import javax.inject.Inject
+import pro.aidar.mealsapp.base.BaseViewModel
+import pro.aidar.mealsapp.base.SingleLiveEvent
+import pro.aidar.mealsapp.utils.status.LikeStatus
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
@@ -31,37 +32,30 @@ class MainViewModel @Inject constructor(
 
     val likeStatus = MutableLiveData(LikeStatus.LIKED)
 
-    val categories: MutableLiveData<CategoryList> by lazy {
-        MutableLiveData(CategoryList())
-    }
+    val categories = SingleLiveEvent<CategoryList>()
 
-    val category: MutableLiveData<MealList> by lazy {
-        MutableLiveData(MealList())
-    }
+    val category = SingleLiveEvent<MealList>()
 
-    val mealDetail: MutableLiveData<MealListDetail> by lazy {
-        MutableLiveData(MealListDetail())
-    }
+    val mealDetail = SingleLiveEvent<MealListDetail>()
 
-    val favorites: MutableLiveData<List<Meal>> by lazy {
-        MutableLiveData(listOf())
-    }
+    val favorites = SingleLiveEvent<List<Meal>>()
 
     fun fetchCategories() {
-        isLoad.set(true)
         disposable.add(
             categoriesUseCase.execute()
+                .doOnSubscribe { isLoad.set(true) }
+                .doOnTerminate { isLoad.set(false) }
                 .subscribe({
                     categories.postValue(it)
-                    isLoad.set(false)
                 }, ::handleError)
         )
     }
 
     fun fetchCategory(id: String) {
-        isLoad.set(true)
         disposable.add(
             categoryUseCase.execute(name = id)
+                .doOnSubscribe { isLoad.set(true) }
+                .doOnTerminate { isLoad.set(false) }
                 .subscribe({
                     category.postValue(it)
                     isLoad.set(false)
@@ -72,6 +66,8 @@ class MainViewModel @Inject constructor(
     fun fetchFavorite() {
         disposable.add(
             favoriteMealsUseCase.getFavorites()
+                .doOnSubscribe { isLoad.set(true) }
+                .doOnTerminate { isLoad.set(false) }
                 .subscribe({
                     favorites.postValue(it)
                 }, ::handleError)
@@ -81,6 +77,8 @@ class MainViewModel @Inject constructor(
     fun fetchDetailMeal(id: String) {
         disposable.add(
             mealDetailUseCase.execute(id = id)
+                .doOnSubscribe { isLoad.set(true) }
+                .doOnTerminate { isLoad.set(false) }
                 .subscribe({
                     mealDetail.postValue(it)
                 }, ::handleError)
@@ -95,7 +93,7 @@ class MainViewModel @Inject constructor(
                     else {
                         addMealUseCase.execute(meal).subscribe({
                             likeStatus.postValue(LikeStatus.LIKED)
-                        },{
+                        }, {
                             likeStatus.postValue(LikeStatus.ERROR)
                         })
                     }
@@ -108,5 +106,4 @@ class MainViewModel @Inject constructor(
             deleteMealUseCase.execute(meal).subscribe()
         )
     }
-
 }
