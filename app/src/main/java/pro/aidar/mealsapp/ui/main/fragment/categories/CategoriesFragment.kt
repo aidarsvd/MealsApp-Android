@@ -1,6 +1,7 @@
 package pro.aidar.mealsapp.ui.main.fragment.categories
 
 import android.os.Bundle
+import android.os.Handler
 import androidx.core.os.bundleOf
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
@@ -14,6 +15,7 @@ import pro.aidar.mealsapp.ui.main.fragment.categories.adapter.CategoriesAdapter
 import pro.aidar.mealsapp.ui.main.viewModel.MainViewModel
 import pro.aidar.mealsapp.utils.AppConstant.CATEGORY_ID
 import java.util.*
+import kotlinx.coroutines.runBlocking
 
 class CategoriesFragment : BaseFragment<FragmentCategoriesBinding>(R.layout.fragment_categories),
     CategoriesAdapter.CategoriesListener {
